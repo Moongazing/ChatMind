@@ -1,0 +1,19 @@
+<div class="chat-container">
+    <h1>AI Chatbot</h1>
+  
+    <textarea
+      [(ngModel)]="question"
+      placeholder="Type your question here..."
+      rows="4"
+      cols="50"
+    ></textarea>
+    <br />
+    <button (click)="askQuestion()" [disabled]="isLoading">Ask</button>
+  
+    <div *ngIf="isLoading">Loading...</div>
+    <div *ngIf="answer">
+      <h3>Answer:</h3>
+      <p>{{ answer }}</p>
+    </div>
+  </div>
+  
